@@ -7,21 +7,21 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class WeatherOpenHelper extends SQLiteOpenHelper {
 	
-	public final String CREATE_PROVINCE = "create table Privince("
-			+ "id integer primary key autocreament,"
-			+ "province_name text,"
-			+ "province_code text)";
-	public final String CREATE_CITY 	= "create table City("
-			+ "id integer primary key autocreament"
-			+ "city_name text,"
-			+ "city_code text,"
-			+ "priovnce_id integer)";
+	public final String CREATE_PROVINCE = "create table Province ("
+			+ "id integer primary key autoincrement, "
+			+ "province_name text, "
+			+ "province_code text) ";
+	public final String CREATE_CITY 	= "create table City ("
+			+ "id integer primary key autoincrement,"
+			+ "city_name text, "
+			+ "city_code text, "
+			+ "province_id integer) ";
 	
-	public final String CREATE_COUNTRY	= "create table Country("
-			+ "id integer primary key autocreament"
-			+ "country_name text,"
-			+ "country_code text,"
-			+ "city_id integer)";
+	public final String CREATE_COUNTY	= "create table County ("
+			+ "id integer primary key autoincrement,"
+			+ "county_name text, "
+			+ "county_code text, "
+			+ "city_id integer) ";
 
 	
 
@@ -37,7 +37,7 @@ public class WeatherOpenHelper extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 		db.execSQL(CREATE_PROVINCE);
 		db.execSQL(CREATE_CITY);
-		db.execSQL(CREATE_COUNTRY);
+		db.execSQL(CREATE_COUNTY);
 		
 
 	}
